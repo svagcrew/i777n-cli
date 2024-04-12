@@ -5,13 +5,22 @@
   "main": "index.js",
   "scripts": {},
   "bin": {
-    "i777n": "./src/runner.js"
+    "i777n": "./dist/index.js",
+    "i777n-dev": "./src/index.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "fast-glob": "^3.3.2",
+    "js-yaml": "^4.1.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.4"
+    "typescript": "^5.4.4",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.12.7",
+    "@types/yargs": "^17.0.32"
   }
 }
