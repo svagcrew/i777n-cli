@@ -9,13 +9,13 @@ export const getPathsByGlobs = async ({
 }: {
   globs: string[];
   baseDir: string;
-}): Promise<string[]> => {
-  const paths = await fg(globs, {
+}) => {
+  const filePaths = await fg(globs, {
     cwd: baseDir,
     onlyFiles: true,
     absolute: true,
   });
-  return paths;
+  return { filePaths };
 };
 
 export const getDataFromFile = async ({ filePath }: { filePath: string }) => {
@@ -30,4 +30,18 @@ export const getDataFromFile = async ({ filePath }: { filePath: string }) => {
     return JSON.parse(await fs.readFile(filePath, "utf8"));
   }
   throw new Error(`Unsupported file extension: ${ext}`);
+};
+
+export const pathsToLikeArrayString = (paths: string[]) => {
+  return paths.map((path) => `"${path}"`).join(", ");
+};
+
+export const fulfillDistPath = ({
+  distPath,
+  distLang,
+}: {
+  distPath: string;
+  distLang: string;
+}) => {
+  return distPath.replace(/\$lang/g, distLang);
 };
