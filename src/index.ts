@@ -49,5 +49,3 @@ void (async () => {
 
 // TODO: typograf
 // TODO: genereate index file
-
-// TODO: lili: unlink and use remote (pnpm i)
