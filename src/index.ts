@@ -51,6 +51,3 @@ void (async () => {
 // TODO: genereate index file
 
 // TODO: lili: unlink and use remote (pnpm i)
-// TODO: lili: update versions of end-project lib-deps to latest
-// TODO: lili: commit, patch, push, publish (all together)
-// TODO: lili: pull (one or all)
