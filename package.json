@@ -1,20 +1,33 @@
 {
   "name": "i777n-cli",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
   "main": "index.js",
-  "scripts": {},
+  "homepage": "https://github.com/svagcrew/i777n-cli",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svagcrew/i777n-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/svagcrew/i777n-cli/issues"
+  },
+  "author": {
+    "name": "Sergei Dmitriev",
+    "url": "https://sergei.svag.group"
+  },
   "bin": {
     "i777n": "./dist/index.js",
-    "i777n-dev": "./src/index.ts"
+    "i777n!": "./src/index.ts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "scripts": {
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/.eslintcache .",
+    "prettify": "prettier --loglevel warn --cache --write '{src/**/*,*}.{ts,tsx,js,json,yml,scss}' '!**/{node_modules,dist}/**/*'"
+  },
   "dependencies": {
     "fast-glob": "^3.3.2",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
+    "svag-eslint": "^0.0.4",
+    "i777n-cli": "^0.0.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.4",
     "yargs": "^17.7.2",
@@ -24,6 +37,7 @@
     "@types/js-yaml": "^4.0.9",
     "@types/lodash": "^4.17.0",
     "@types/node": "^20.12.7",
-    "@types/yargs": "^17.0.32"
+    "@types/yargs": "^17.0.32",
+    "eslint": "^9.0.0"
   }
 }

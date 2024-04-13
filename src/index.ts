@@ -45,3 +45,7 @@ void (async () => {
 // TODO: respect changed manually in translations
 // TODO: typograf
 // TODO: genereate index file
+
+// TODO: lili: update version of packages to local maximum
+// TODO: lili: commit, patch, push, publish (one or all)
+// TODO: lili: pull (one or all)
