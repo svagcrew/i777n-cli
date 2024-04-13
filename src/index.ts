@@ -1,51 +1,56 @@
 #!/usr/bin/env ts-node
 
-import { hideBin } from "yargs/helpers";
-import yargs from "yargs/yargs";
-import { applyToAll } from "./lib/apply";
-import { getConfigCore } from "./lib/config";
+import { hideBin } from 'yargs/helpers'
+import yargs from 'yargs/yargs'
+import { applyToAll } from './lib/apply'
+import { getConfigCore } from './lib/config'
 
 void (async () => {
   try {
-    const argv = await yargs(hideBin(process.argv)).argv;
-    const knownCommands = ["apply"];
+    const argv = await yargs(hideBin(process.argv)).argv
+    const knownCommands = ['apply']
     const { command, args } = (() => {
-      if (!argv._.length) return { command: "apply", args: [] };
+      if (!argv._.length) return { command: 'apply', args: [] }
       if (knownCommands.includes(argv._[0].toString())) {
-        return { command: argv._[0].toString(), args: argv._.slice(1) };
+        return { command: argv._[0].toString(), args: argv._.slice(1) }
       }
-      return { command: "apply", args: argv._ };
-    })();
+      return { command: 'apply', args: argv._ }
+    })()
 
-    const cwd = process.cwd();
+    const cwd = process.cwd()
     const { configCore } = await getConfigCore({
       dirPath: cwd,
-    });
+    })
 
     switch (command) {
-      case "apply":
+      case 'apply':
         await applyToAll({
           globs: args.map((arg) => arg.toString()),
           configCore,
-        });
-        break;
+        })
+        break
       default:
-        console.info("Unknown command:", command);
-        break;
+        console.info('Unknown command:', command)
+        break
     }
   } catch (error) {
-    console.error(error);
+    console.error(error)
   }
-})();
+})()
 
-// TODO: Errory, deepMap, Eslint as self projects
+// TODO: husky
+// TODO: eslint-prettier
+// TODO: Errory, deepMap as self projects
+
 // TODO: generate meta file
 // TODO: translate all
 // TODO: translate only changed
 // TODO: respect changed manually in translations
+
 // TODO: typograf
 // TODO: genereate index file
 
-// TODO: lili: update version of packages to local maximum
-// TODO: lili: commit, patch, push, publish (one or all)
+// TODO: lili: unlink and use remote (pnpm i)
+// TODO: lili: update versions of end-project lib-deps to latest
+// TODO: lili: commit, patch, push, publish (all together)
 // TODO: lili: pull (one or all)
