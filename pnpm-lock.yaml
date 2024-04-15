@@ -43,12 +43,12 @@ devDependencies:
   '@types/yargs':
     specifier: ^17.0.32
     version: 17.0.32
-  svag-eslint:
-    specifier: ^0.0.12
-    version: 0.0.12
-  svag-tsconfig:
-    specifier: ^0.0.10
-    version: 0.0.10
+  svag-lint:
+    specifier: ^0.0.13
+    version: 0.0.13
+  svag-ts:
+    specifier: ^0.0.11
+    version: 0.0.11
 
 packages:
 
@@ -1055,8 +1055,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svag-eslint@0.0.12:
-    resolution: {integrity: sha512-S+MCOLtfbeMz+lefvMbaOZ9IPE5LVPmhmA/PzOfsETK1ZHzhov8mz/ojO5aE5TO+xs9X3z4w083e2LrbNm9iLQ==}
+  /svag-lint@0.0.13:
+    resolution: {integrity: sha512-lGzY1xq4Y0qO/wb4x4PZ1HS5viqJ8oLtFVq/IjBNd/xp7LPp8m31jhIcy68rJ50B4Xkh4dRJeRFOXDORSE9u4g==}
     dependencies:
       '@eslint/js': 9.0.0
       eslint: 9.0.0
@@ -1067,8 +1067,8 @@ packages:
       - supports-color
     dev: true
 
-  /svag-tsconfig@0.0.10:
-    resolution: {integrity: sha512-8TEp2zew6j8p5LGP/pkYNYoYz4TySMrVNHec/wuCvlyAkng3Ii4D1LzecWd4tlCwjdjsWTqGFUk1wzkW3KieSA==}
+  /svag-ts@0.0.11:
+    resolution: {integrity: sha512-34N4lxxWs2mELyPA7E04GKnElN0SW+H43Ek0zDlBFWLT1wt3pkd/S/xNYcdNHd1uxxGgkobEwpnGV3Wet4+0Bw==}
     dependencies:
       typescript: 5.4.4
     dev: true
