@@ -21,15 +21,14 @@
   "scripts": {
     "lint": "eslint --cache --cache-location ./node_modules/.cache/.eslintcache .",
     "prettify": "prettier --loglevel warn --cache --write '{src/**/*,*}.{ts,tsx,js,json,yml,scss}' '!**/{node_modules,dist}/**/*'",
-    "types": "tsc --noEmit"
+    "types": "tsc --noEmit",
+    "build": "rimraf ./dist && tsc --build"
   },
   "dependencies": {
     "fast-glob": "^3.3.2",
-    "i777n-core": "^0.0.4",
+    "i777n-core": "^0.0.5",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.4.4",
     "yargs": "^17.7.2",
     "zod": "^3.22.4"
   },
@@ -38,7 +37,10 @@
     "@types/lodash": "^4.17.0",
     "@types/node": "^20.12.7",
     "@types/yargs": "^17.0.32",
-    "svag-lint": "^0.0.13",
-    "svag-ts": "^0.0.11"
+    "rimraf": "^5.0.5",
+    "svag-lint": "^0.0.14",
+    "svag-ts": "^0.0.12",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.4"
   }
 }

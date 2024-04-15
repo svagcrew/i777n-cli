@@ -1,5 +1,5 @@
 import fg from 'fast-glob'
-import { zI777LangCode } from 'i777n-core/src/index'
+import { zI777LangCode } from 'i777n-core'
 import { z } from 'zod'
 import { getDataFromFile, pathsToLikeArrayString } from './utils'
 import path from 'path'
