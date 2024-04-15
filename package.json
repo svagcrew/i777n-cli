@@ -20,11 +20,12 @@
   },
   "scripts": {
     "lint": "eslint --cache --cache-location ./node_modules/.cache/.eslintcache .",
-    "prettify": "prettier --loglevel warn --cache --write '{src/**/*,*}.{ts,tsx,js,json,yml,scss}' '!**/{node_modules,dist}/**/*'"
+    "prettify": "prettier --loglevel warn --cache --write '{src/**/*,*}.{ts,tsx,js,json,yml,scss}' '!**/{node_modules,dist}/**/*'",
+    "types": "tsc --noEmit"
   },
   "dependencies": {
     "fast-glob": "^3.3.2",
-    "i777n-core": "^0.0.3",
+    "i777n-core": "^0.0.4",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
     "ts-node": "^10.9.2",
@@ -37,7 +38,7 @@
     "@types/lodash": "^4.17.0",
     "@types/node": "^20.12.7",
     "@types/yargs": "^17.0.32",
-    "svag-eslint": "^0.0.11",
-    "svag-tsconfig": "^0.0.9"
+    "svag-eslint": "^0.0.12",
+    "svag-tsconfig": "^0.0.10"
   }
 }

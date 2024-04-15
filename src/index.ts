@@ -37,15 +37,3 @@ void (async () => {
     console.error(error)
   }
 })()
-
-// TODO: husky
-// TODO: eslint-prettier
-// TODO: Errory, deepMap as self projects
-
-// TODO: generate meta file
-// TODO: translate all
-// TODO: translate only changed
-// TODO: respect changed manually in translations
-
-// TODO: typograf
-// TODO: genereate index file

@@ -9,8 +9,8 @@ dependencies:
     specifier: ^3.3.2
     version: 3.3.2
   i777n-core:
-    specifier: ^0.0.3
-    version: 0.0.3
+    specifier: ^0.0.4
+    version: 0.0.4
   js-yaml:
     specifier: ^4.1.0
     version: 4.1.0
@@ -44,11 +44,11 @@ devDependencies:
     specifier: ^17.0.32
     version: 17.0.32
   svag-eslint:
-    specifier: ^0.0.11
-    version: 0.0.11
+    specifier: ^0.0.12
+    version: 0.0.12
   svag-tsconfig:
-    specifier: ^0.0.9
-    version: 0.0.9
+    specifier: ^0.0.10
+    version: 0.0.10
 
 packages:
 
@@ -743,8 +743,8 @@ packages:
       function-bind: 1.1.2
     dev: true
 
-  /i777n-core@0.0.3:
-    resolution: {integrity: sha512-vQzPGZLz0cYCzNt6HHS1L6iQvwsDWigSYUubOaz+HpMpsQx79nhRMm4Bv+J/vCucqWYWdflkQGm46P1aDefliw==}
+  /i777n-core@0.0.4:
+    resolution: {integrity: sha512-+8rQnUyBKlHJsFNzOtrkFYed1c4B2ySg0Icn1WRaHwqxAj2+/cBZDExugNHyQS/KnPl6EroKY1X0mBo2XDkspA==}
     dependencies:
       zod: 3.22.4
     dev: false
@@ -1055,8 +1055,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svag-eslint@0.0.11:
-    resolution: {integrity: sha512-YJGfYKpQVWdO+2buAcgSgU0vkXwcTRVpNc/5c5VUT1T8tv1nh56AuH56BRncYHTndStCMsy03zelW5MtUrzCVA==}
+  /svag-eslint@0.0.12:
+    resolution: {integrity: sha512-S+MCOLtfbeMz+lefvMbaOZ9IPE5LVPmhmA/PzOfsETK1ZHzhov8mz/ojO5aE5TO+xs9X3z4w083e2LrbNm9iLQ==}
     dependencies:
       '@eslint/js': 9.0.0
       eslint: 9.0.0
@@ -1067,8 +1067,8 @@ packages:
       - supports-color
     dev: true
 
-  /svag-tsconfig@0.0.9:
-    resolution: {integrity: sha512-wrUJqUlU8ch1TfwpKgkczwGzs3hksXzRrPYI0JG/wHVm8PfoRkenimEsP1BrFKXwrA6Dn0XLXlEyMrE5pylqOw==}
+  /svag-tsconfig@0.0.10:
+    resolution: {integrity: sha512-8TEp2zew6j8p5LGP/pkYNYoYz4TySMrVNHec/wuCvlyAkng3Ii4D1LzecWd4tlCwjdjsWTqGFUk1wzkW3KieSA==}
     dependencies:
       typescript: 5.4.4
     dev: true
