@@ -9,8 +9,8 @@ dependencies:
     specifier: ^3.3.2
     version: 3.3.2
   i777n-core:
-    specifier: ^0.1.2
-    version: 0.1.2
+    specifier: ^0.1.3
+    version: 0.1.3
   js-yaml:
     specifier: ^4.1.0
     version: 4.1.0
@@ -41,8 +41,8 @@ devDependencies:
     specifier: ^5.0.5
     version: 5.0.5
   svag-lint:
-    specifier: ^0.1.2
-    version: 0.1.2(@types/node@20.12.7)(prettier@3.2.5)
+    specifier: ^0.1.3
+    version: 0.1.3(@types/node@20.12.7)(prettier@3.2.5)
   svag-prettier:
     specifier: ^0.1.1
     version: 0.1.1
@@ -952,8 +952,8 @@ packages:
       function-bind: 1.1.2
     dev: true
 
-  /i777n-core@0.1.2:
-    resolution: {integrity: sha512-xGDo7+Nbmfdlxx0TZTRmzZPU1Wye5kNRAsWNAlPSx+Bq4b3yauBUVj2jPJK8mfDHXfeu+HK8sU8hbszYDERKEQ==}
+  /i777n-core@0.1.3:
+    resolution: {integrity: sha512-FAyhmqhBjU95wLXR6Qu51Fhjb3HOhK/Ghd/q5TldDl8VtwSQ7inVyLLqWetsFuCJxN8rTCIJE3nTv5Eu5efQYw==}
     dependencies:
       zod: 3.22.4
     dev: false
@@ -1373,8 +1373,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svag-cli-utils@0.0.13(@types/node@20.12.7):
-    resolution: {integrity: sha512-s9GWQRSgpHD/XjMmAUm9cIcg3b63lkzQv4E/MJltn4GEnd51f2o8rze3reJyF86FtwSHdbuUJe+DEJk8qbp/zw==}
+  /svag-cli-utils@0.1.1(@types/node@20.12.7):
+    resolution: {integrity: sha512-t0UqmSuxuFS5V2j9lbWnNnsC3NOTsmFqDA2sp6UMiqu7wiLt+eVpEISMiVcmZ4XsvlJe/YCJWmCB2fxH0V99pw==}
     dependencies:
       dedent: 1.5.3
       enquirer: 2.4.1
@@ -1395,8 +1395,8 @@ packages:
       - babel-plugin-macros
     dev: true
 
-  /svag-lint@0.1.2(@types/node@20.12.7)(prettier@3.2.5):
-    resolution: {integrity: sha512-r1NbDTwiuQZrAWCRYbAmHHUIwVREc5ptxfZNBE/TW0ph0FiICcH45asgZzrC+ssknM3HIidGJxqFJR1vRIsG2w==}
+  /svag-lint@0.1.3(@types/node@20.12.7)(prettier@3.2.5):
+    resolution: {integrity: sha512-H7y9i9WZNlAmsfBYvDpQwHtRjDx0nFxTjX/gcQRvdNSVIJaZeoZ1cm7Vi7fCK5W1kPGZDujPVscRX1agBNn3Qg==}
     hasBin: true
     dependencies:
       '@eslint/js': 9.0.0
@@ -1406,7 +1406,7 @@ packages:
       eslint-plugin-node: 11.1.0(eslint@9.0.0)
       eslint-plugin-prettier: 5.1.3(eslint-config-prettier@9.1.0)(eslint@9.0.0)(prettier@3.2.5)
       lodash: 4.17.21
-      svag-cli-utils: 0.0.13(@types/node@20.12.7)
+      svag-cli-utils: 0.1.1(@types/node@20.12.7)
       typescript: 5.4.5
       typescript-eslint: 7.6.0(eslint@9.0.0)(typescript@5.4.5)
       zod: 3.22.4
