@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "fast-glob": "^3.3.2",
-    "i777n-core": "^0.0.11",
+    "i777n-core": "^0.0.12",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
     "yargs": "^17.7.2",
@@ -41,9 +41,9 @@
     "@types/node": "^20.12.7",
     "@types/yargs": "^17.0.32",
     "rimraf": "^5.0.5",
-    "svag-lint": "^0.0.21",
-    "svag-prettier": "^0.0.4",
-    "svag-ts": "^0.0.15",
+    "svag-lint": "^0.0.27",
+    "svag-prettier": "^0.0.5",
+    "svag-ts": "^0.0.16",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.4"
   }
