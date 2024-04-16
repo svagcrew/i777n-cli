@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "fast-glob": "^3.3.2",
-    "i777n-core": "^0.0.12",
+    "i777n-core": "^0.0.14",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
     "yargs": "^17.7.2",
@@ -42,7 +42,7 @@
     "@types/node": "^20.12.7",
     "@types/yargs": "^17.0.32",
     "rimraf": "^5.0.5",
-    "svag-lint": "^0.0.28",
+    "svag-lint": "^0.0.29",
     "svag-prettier": "^0.0.6",
     "svag-ts": "^0.0.17",
     "ts-node": "^10.9.2",
