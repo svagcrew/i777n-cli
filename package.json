@@ -41,7 +41,7 @@
     "@types/node": "^20.12.7",
     "@types/yargs": "^17.0.32",
     "rimraf": "^5.0.5",
-    "svag-lint": "^0.0.18",
+    "svag-lint": "^0.0.19",
     "svag-prettier": "^0.0.3",
     "svag-ts": "^0.0.14",
     "ts-node": "^10.9.2",
