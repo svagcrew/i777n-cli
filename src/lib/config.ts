@@ -1,8 +1,8 @@
 import fg from 'fast-glob'
 import { zI777LangCode } from 'i777n-core'
+import path from 'path'
 import { z } from 'zod'
 import { getDataFromFile, pathsToLikeArrayString } from './utils'
-import path from 'path'
 
 const zConfigGeneral = z.object({
   srcLang: zI777LangCode,
