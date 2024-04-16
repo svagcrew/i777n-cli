@@ -1,5 +1,3 @@
-#!/usr/bin/env ts-node
-
 import { hideBin } from 'yargs/helpers'
 import yargs from 'yargs/yargs'
 import { applyToAll } from './lib/apply'
