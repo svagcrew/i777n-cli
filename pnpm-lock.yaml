@@ -9,8 +9,8 @@ dependencies:
     specifier: ^3.3.2
     version: 3.3.2
   i777n-core:
-    specifier: ^0.1.5
-    version: 0.1.5
+    specifier: ^0.1.6
+    version: 0.1.6
   js-yaml:
     specifier: ^4.1.0
     version: 4.1.0
@@ -952,8 +952,8 @@ packages:
       function-bind: 1.1.2
     dev: true
 
-  /i777n-core@0.1.5:
-    resolution: {integrity: sha512-oxSZ9Fm0opazPinjRBu9ewCr07eut1A2PhhOpl2TPYIRm41VtP7lPrq6bhhCYtJTByl1DtfqY5rKBnzGbz0Bpw==}
+  /i777n-core@0.1.6:
+    resolution: {integrity: sha512-x/ubTLXSyxCRgYB6qoSs8qw9iVMjhz8rTBv5b1fGZOHEa8Ga8ftCmHSmfoVJY6kAklHWfCxokshykn1sVYnrOw==}
     dependencies:
       zod: 3.22.4
     dev: false

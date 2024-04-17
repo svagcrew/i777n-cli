@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "fast-glob": "^3.3.2",
-    "i777n-core": "^0.1.5",
+    "i777n-core": "^0.1.6",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
     "yargs": "^17.7.2",
