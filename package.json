@@ -27,11 +27,12 @@
     "types": "svag-ts types",
     "build": "svag-ts build",
     "watch": "svag-ts watch",
-    "prepare": "ts-patch install -s"
+    "test": "echo 'Everything is OK'",
+    "prepare": "ts-patch install -s && husky"
   },
   "dependencies": {
     "fast-glob": "^3.3.2",
-    "i777n-core": "^0.1.14",
+    "i777n-core": "^0.1.15",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
     "yargs": "^17.7.2",
@@ -42,10 +43,12 @@
     "@types/lodash": "^4.17.0",
     "@types/node": "^20.12.7",
     "@types/yargs": "^17.0.32",
+    "husky": "^9.0.11",
     "rimraf": "^5.0.5",
-    "svag-lint": "^0.1.25",
-    "svag-prettier": "^0.1.17",
-    "svag-ts": "^0.1.21",
+    "svag-husky": "^0.1.4",
+    "svag-lint": "^0.1.27",
+    "svag-prettier": "^0.1.19",
+    "svag-ts": "^0.1.23",
     "ts-patch": "^3.1.2",
     "typescript": "^5.4.4"
   }
