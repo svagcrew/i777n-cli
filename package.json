@@ -23,13 +23,14 @@
   "scripts": {
     "lint": "svag-lint lint",
     "prettify": "svag-prettier prettify",
-    "types": "tsc --noEmit",
-    "build": "rimraf ./dist && tsc --build",
-    "watch": "tsc --watch --preserveWatchOutput --pretty"
+    "types": "svag-ts types",
+    "build": "svag-ts build",
+    "watch": "svag-ts watch",
+    "prepare": "ts-patch install -s"
   },
   "dependencies": {
     "fast-glob": "^3.3.2",
-    "i777n-core": "^0.1.11",
+    "i777n-core": "^0.1.12",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
     "yargs": "^17.7.2",
@@ -41,10 +42,11 @@
     "@types/node": "^20.12.7",
     "@types/yargs": "^17.0.32",
     "rimraf": "^5.0.5",
-    "svag-lint": "^0.1.15",
-    "svag-prettier": "^0.1.8",
-    "svag-ts": "^0.1.12",
+    "svag-lint": "^0.1.21",
+    "svag-prettier": "^0.1.12",
+    "svag-ts": "^0.1.17",
     "ts-node": "^10.9.2",
+    "ts-patch": "^3.1.2",
     "typescript": "^5.4.4"
   }
 }

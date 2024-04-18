@@ -9,8 +9,8 @@ dependencies:
     specifier: ^3.3.2
     version: 3.3.2
   i777n-core:
-    specifier: ^0.1.11
-    version: 0.1.11
+    specifier: ^0.1.12
+    version: 0.1.12
   js-yaml:
     specifier: ^4.1.0
     version: 4.1.0
@@ -41,17 +41,20 @@ devDependencies:
     specifier: ^5.0.5
     version: 5.0.5
   svag-lint:
-    specifier: ^0.1.15
-    version: 0.1.15(@types/node@20.12.7)(prettier@3.2.5)
+    specifier: ^0.1.21
+    version: 0.1.21(@types/node@20.12.7)(prettier@3.2.5)
   svag-prettier:
-    specifier: ^0.1.8
-    version: 0.1.8(@types/node@20.12.7)
-  svag-ts:
     specifier: ^0.1.12
-    version: 0.1.12
+    version: 0.1.12(@types/node@20.12.7)
+  svag-ts:
+    specifier: ^0.1.17
+    version: 0.1.17(@types/node@20.12.7)
   ts-node:
     specifier: ^10.9.2
     version: 10.9.2(@types/node@20.12.7)(typescript@5.4.4)
+  ts-patch:
+    specifier: ^3.1.2
+    version: 3.1.2
   typescript:
     specifier: ^5.4.4
     version: 5.4.4
@@ -897,6 +900,15 @@ packages:
       path-scurry: 1.10.2
     dev: true
 
+  /global-prefix@3.0.0:
+    resolution: {integrity: sha512-awConJSVCHVGND6x3tmMaKcQvwXLhjdkmomy2W+Goaui8YPgYgXJZewhg3fWC+DlfqqQuWg8AwqjGTD2nAPVWg==}
+    engines: {node: '>=6'}
+    dependencies:
+      ini: 1.3.8
+      kind-of: 6.0.3
+      which: 1.3.1
+    dev: true
+
   /globals@14.0.0:
     resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
     engines: {node: '>=18'}
@@ -952,8 +964,8 @@ packages:
       function-bind: 1.1.2
     dev: true
 
-  /i777n-core@0.1.11:
-    resolution: {integrity: sha512-eV1lu5qxT0QfMN9iM5RC+U2xOqxcYoiLIBw3aWqGvygzuoLztZa8DizVa5+99UvWkVzB1/d0ikd/rCL5naj7Ng==}
+  /i777n-core@0.1.12:
+    resolution: {integrity: sha512-Ra0mvMo3eBmQ1+roxIQqi29ewc9mYD57KE1hL8yjrh6B5QuJFlvFKcWWEj9wePNGP9+kbDgHqY97muAyoezb/A==}
     dependencies:
       zod: 3.22.4
     dev: false
@@ -974,6 +986,10 @@ packages:
   /imurmurhash@0.1.4:
     resolution: {integrity: sha512-JmXMZ6wuvDmLiHEml9ykzqO6lwFbof0GG4IkcGaENdCRDDmMVnny7s5HsIgHCbaq0w2MyPhDqkhTUgS2LU2PHA==}
     engines: {node: '>=0.8.19'}
+    dev: true
+
+  /ini@1.3.8:
+    resolution: {integrity: sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==}
     dev: true
 
   /is-core-module@2.13.1:
@@ -1060,6 +1076,11 @@ packages:
       json-buffer: 3.0.1
     dev: true
 
+  /kind-of@6.0.3:
+    resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
+    engines: {node: '>=0.10.0'}
+    dev: true
+
   /levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
     engines: {node: '>= 0.8.0'}
@@ -1120,6 +1141,10 @@ packages:
     engines: {node: '>=16 || 14 >=14.17'}
     dependencies:
       brace-expansion: 2.0.1
+    dev: true
+
+  /minimist@1.2.8:
+    resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
     dev: true
 
   /minipass@7.0.4:
@@ -1373,8 +1398,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svag-cli-utils@0.1.12(@types/node@20.12.7):
-    resolution: {integrity: sha512-PfMBGonOjHWytfdVgP32e8kcY07Ajg+Hm7m06H+Aeuj37HCWOTQmqTsTPRL4+DGIrZT6VLEbvj02nfg+o9wAYQ==}
+  /svag-cli-utils@0.1.17(@types/node@20.12.7):
+    resolution: {integrity: sha512-DenQHZkyL/uKQ8ppBBs0In8jVheU2+5PAeW7m3znCBfV9WjA0tkN+JMS3k8JgRjB7uO8IohM5Wvz0Q3GSVnJRA==}
     dependencies:
       dedent: 1.5.3
       enquirer: 2.4.1
@@ -1395,8 +1420,8 @@ packages:
       - babel-plugin-macros
     dev: true
 
-  /svag-lint@0.1.15(@types/node@20.12.7)(prettier@3.2.5):
-    resolution: {integrity: sha512-zmfqw6/YieSk6GnN45UR79dVEhoOnhF8zen4V9RsxbLPq5yzwK8af4GOAb26Z+FIHufmHQTY0CJUCY+/LTcTzQ==}
+  /svag-lint@0.1.21(@types/node@20.12.7)(prettier@3.2.5):
+    resolution: {integrity: sha512-ppQCw3tT+d/CVjDkfxwo7qZza0WPtouAFgT4/eTNcWMnOxEAxm29ZGWtvAq3xAMN+O7gAtn4/q0x9gYbsZl5tw==}
     hasBin: true
     dependencies:
       '@eslint/js': 9.0.0
@@ -1406,7 +1431,7 @@ packages:
       eslint-plugin-node: 11.1.0(eslint@9.0.0)
       eslint-plugin-prettier: 5.1.3(eslint-config-prettier@9.1.0)(eslint@9.0.0)(prettier@3.2.5)
       lodash: 4.17.21
-      svag-cli-utils: 0.1.12(@types/node@20.12.7)
+      svag-cli-utils: 0.1.17(@types/node@20.12.7)
       typescript: 5.4.5
       typescript-eslint: 7.6.0(eslint@9.0.0)(typescript@5.4.5)
       zod: 3.22.4
@@ -1420,14 +1445,14 @@ packages:
       - supports-color
     dev: true
 
-  /svag-prettier@0.1.8(@types/node@20.12.7):
-    resolution: {integrity: sha512-oY7E7Shvey+HCFoc71AW0cZNDhMmjmMHKqz5Qems6FahJkGxP+LrI/qj4RhJ2GXEynFX1BUov22RIRpRJevrsQ==}
+  /svag-prettier@0.1.12(@types/node@20.12.7):
+    resolution: {integrity: sha512-yLB6YwMgZdN0y7dk0N97MYrYJgSrWry4uuLgCDONhcWep02Zbj1uy5naE0DFbiY4Z7xvx8SpSFbs63wpuhmz/w==}
     hasBin: true
     dependencies:
       dedent: 1.5.3
       lodash: 4.17.21
       prettier: 3.2.5
-      svag-cli-utils: 0.1.12(@types/node@20.12.7)
+      svag-cli-utils: 0.1.17(@types/node@20.12.7)
       typescript: 5.4.5
       zod: 3.22.4
     transitivePeerDependencies:
@@ -1437,11 +1462,23 @@ packages:
       - babel-plugin-macros
     dev: true
 
-  /svag-ts@0.1.12:
-    resolution: {integrity: sha512-pBSOA1hwrAp+4yl2aDlZkCHyQLt5Lj344kY34dg7sW98A1pSdxZeP91udPhxtrJI505TqXubN3SlN6v/0/9XEw==}
+  /svag-ts@0.1.17(@types/node@20.12.7):
+    resolution: {integrity: sha512-G167p4y2qOzYtlaWIruJl58MvO8OBvcH3VvmAM7a7EGy4kU/v8F5eRFwlQ9BA2euJAUjXT3m1qGW6KIhk56Pjg==}
+    hasBin: true
     dependencies:
+      dedent: 1.5.3
+      lodash: 4.17.21
+      prettier: 3.2.5
+      svag-cli-utils: 0.1.17(@types/node@20.12.7)
+      ts-node: 10.9.2(@types/node@20.12.7)(typescript@5.4.5)
       typescript: 5.4.5
       typescript-transform-paths: 3.4.7(typescript@5.4.5)
+      zod: 3.22.4
+    transitivePeerDependencies:
+      - '@swc/core'
+      - '@swc/wasm'
+      - '@types/node'
+      - babel-plugin-macros
     dev: true
 
   /synckit@0.8.8:
@@ -1542,6 +1579,18 @@ packages:
       yn: 3.1.1
     dev: true
 
+  /ts-patch@3.1.2:
+    resolution: {integrity: sha512-n58F5AqjUMdp9RAKq+E1YBkmONltPVbt1nN+wrmZXoYZek6QcvaTuqvKMhYhr5BxtC53kD/exxIPA1cP1RQxsA==}
+    hasBin: true
+    dependencies:
+      chalk: 4.1.2
+      global-prefix: 3.0.0
+      minimist: 1.2.8
+      resolve: 1.22.8
+      semver: 7.6.0
+      strip-ansi: 6.0.1
+    dev: true
+
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
     dev: true
@@ -1605,6 +1654,13 @@ packages:
 
   /v8-compile-cache-lib@3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
+    dev: true
+
+  /which@1.3.1:
+    resolution: {integrity: sha512-HxJdYWq1MTIQbJ3nw0cqssHoTNU267KlrDuGZ1WYlxDStUtKUhOaJmh112/TZmHxxUfuJqPXSOm7tDyas0OSIQ==}
+    hasBin: true
+    dependencies:
+      isexe: 2.0.0
     dev: true
 
   /which@2.0.2:
