@@ -1,8 +1,8 @@
 import fg from 'fast-glob'
 import { zI777LangCode } from 'i777n-core'
 import path from 'path'
+import { getDataFromFile, stringsToLikeArrayString } from 'svag-cli-utils'
 import { z } from 'zod'
-import { getDataFromFile, pathsToLikeArrayString } from './utils'
 
 const zConfigGeneral = z.object({
   srcLang: zI777LangCode,
@@ -60,7 +60,7 @@ export const getConfigCore = async ({ dirPath }: { dirPath: string }) => {
     throw new Error('Config file not found')
   }
   if (configCorePaths.length > 1) {
-    throw new Error(`Multiple config files found: ${pathsToLikeArrayString(configCorePaths)}`)
+    throw new Error(`Multiple config files found: ${stringsToLikeArrayString(configCorePaths)}`)
   }
   const configCorePath = configCorePaths[0]
   const configCoreSource = await getDataFromFile({ filePath: configCorePath })

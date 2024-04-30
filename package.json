@@ -31,10 +31,15 @@
     "prepare": "ts-patch install -s && husky"
   },
   "dependencies": {
+    "dedent": "^1.5.3",
+    "dotenv": "^16.4.5",
     "fast-glob": "^3.3.2",
     "i777n-core": "^0.1.15",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
+    "source-map-support": "^0.5.21",
+    "svag-cli-utils": "^0.1.25",
+    "svag-deep-map": "^0.1.2",
     "yargs": "^17.7.2",
     "zod": "^3.22.4"
   },
