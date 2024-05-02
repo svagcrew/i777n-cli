@@ -4,16 +4,18 @@ import path from 'path'
 import { getPathsByGlobs, log, stringsToLikeArrayString } from 'svag-cli-utils'
 import { ConfigCore, getConfigUnit } from './config'
 import { getUnitMeta, parseUnitFile, saveUnitMeta } from './unit'
-import { fulfillDistPath } from './utils'
+import { fulfillDistPath, normalizeGlobs } from './utils'
 
 export const applyToAll = async ({ globs, configCore }: { globs?: ConfigCore['globs']; configCore: ConfigCore }) => {
-  globs = !globs || !globs.length ? configCore.globs : globs
+  const { normalizedGlobs } = normalizeGlobs({ globs, configCore })
   const { filePaths } = await getPathsByGlobs({
-    globs,
+    globs: normalizedGlobs,
     baseDir: configCore.baseDir,
   })
   if (!filePaths.length) {
-    throw new Error(`No files found by globs ${stringsToLikeArrayString(globs)} inside "${configCore.baseDir}"`)
+    throw new Error(
+      `No files found by globs ${stringsToLikeArrayString(normalizedGlobs)} inside "${configCore.baseDir}"`
+    )
   }
   for (const unitPath of filePaths) {
     await applyToOne({ unitPath, configCore })

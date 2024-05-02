@@ -9,7 +9,7 @@ export const parseUnitFile = async ({ unitPath }: { unitPath: string }) => {
   const unitSource = (await getDataFromFile({ filePath: unitPath })) as Record<string, any>
   const configUnitSource = unitSource.i777n || {}
   const unitContent = _.omit(unitSource, 'i777n')
-  return { configUnitSource, unitContent }
+  return { configUnitSource, unitContent, unitSource }
 }
 
 export const getUnitMeta = async ({
