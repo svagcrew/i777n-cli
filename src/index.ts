@@ -1,12 +1,13 @@
 import 'source-map-support/register'
 
 import { applyToAll } from '@/lib/apply'
+import { checkAll } from '@/lib/check'
+import { combine } from '@/lib/combine'
 import { getConfigCore } from '@/lib/config'
 import { validateEnv } from '@/lib/env'
+import { fixAll } from '@/lib/fix'
 import dedent from 'dedent'
 import { defineCliApp, log } from 'svag-cli-utils'
-import { checkAll } from '@/lib/check'
-import { fixAll } from '@/lib/fix'
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 defineCliApp(async ({ cwd, command, args, argr, flags }) => {
@@ -33,6 +34,12 @@ defineCliApp(async ({ cwd, command, args, argr, flags }) => {
     case 'fix': {
       await fixAll({
         globs: args,
+        configCore,
+      })
+      break
+    }
+    case 'combine': {
+      await combine({
         configCore,
       })
       break

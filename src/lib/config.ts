@@ -8,6 +8,7 @@ const zConfigGeneral = z.object({
   srcLang: zI777LangCode,
   distLangs: z.array(zI777LangCode),
   distPath: z.string(),
+  combinedDistPath: z.string(),
 })
 export const zConfigCore = zConfigGeneral.extend({
   baseDir: z.string(),
@@ -29,6 +30,7 @@ const defaultConfigCore: ConfigCore = {
   srcLang: 'en',
   distLangs: ['en'],
   distPath: './locale/$lang.json',
+  combinedDistPath: './src/locale.json',
 }
 
 const findAllConfigsCorePaths = async ({ dirPath }: { dirPath: string }) => {
@@ -73,7 +75,9 @@ export const getConfigCore = async ({ dirPath }: { dirPath: string }) => {
   if (!configCoreMergedValidated.success) {
     throw new Error(`Invalid core config file: "${configCorePath}": ${configCoreMergedValidated.error.message}`)
   }
-  return { configCore: configCoreMergedValidated.data }
+  const configCore = configCoreMergedValidated.data
+  configCore.combinedDistPath = path.resolve(path.dirname(configCorePath), configCore.combinedDistPath)
+  return { configCore }
 }
 
 export const getConfigUnit = async ({
