@@ -41,7 +41,7 @@ const checkOne = async ({ unitPath, configCore }: { unitPath: string; configCore
     if (result.willBeTranslated) {
       log.green(`File ${unitPath} will be translated from ${configUnit.srcLang} to ${distLang}`)
     } else {
-      log.black(`File ${unitPath} will not be translated from ${configUnit.srcLang} to ${distLang}`)
+      // log.black(`File ${unitPath} will not be translated from ${configUnit.srcLang} to ${distLang}`)
     }
   }
 }

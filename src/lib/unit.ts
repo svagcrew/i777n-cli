@@ -46,5 +46,5 @@ export const getUnitMeta = async ({
 }
 
 export const saveUnitMeta = async ({ unitMeta, unitMetaPath }: { unitMeta: I777Meta; unitMetaPath: string }) => {
-  await fs.writeFile(unitMetaPath, JSON.stringify(unitMeta, null, 2), 'utf8')
+  await fs.writeFile(unitMetaPath, JSON.stringify(unitMeta, null, 2) + '\n', 'utf8')
 }

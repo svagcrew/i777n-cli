@@ -40,8 +40,8 @@ const applyToOne = async ({ unitPath, configCore }: { unitPath: string; configCo
     })
     await fs.mkdir(path.dirname(distPathFulfilled), { recursive: true })
     if (distLang === configUnit.srcLang) {
-      await fs.writeFile(distPathFulfilled, JSON.stringify(unitContent, null, 2), 'utf8')
-      log.black(`File ${distPathFulfilled} has been updated`)
+      await fs.writeFile(distPathFulfilled, JSON.stringify(unitContent, null, 2) + '\n', 'utf8')
+      // log.black(`File ${distPathFulfilled} has been updated`)
     } else {
       const {
         content: distContent,
@@ -56,13 +56,13 @@ const applyToOne = async ({ unitPath, configCore }: { unitPath: string; configCo
       if (wasTranslated) {
         log.green(`File ${unitPath} has been translated from ${configUnit.srcLang} to ${distLang}`)
       } else {
-        log.black(`File ${unitPath} has not been translated from ${configUnit.srcLang} to ${distLang}`)
+        // log.black(`File ${unitPath} has not been translated from ${configUnit.srcLang} to ${distLang}`)
       }
       Object.assign(unitMeta, updatedUnitMeta)
-      await fs.writeFile(distPathFulfilled, JSON.stringify(distContent, null, 2), 'utf8')
-      log.black(`File ${distPathFulfilled} has been updated`)
+      await fs.writeFile(distPathFulfilled, JSON.stringify(distContent, null, 2) + '\n', 'utf8')
+      // log.black(`File ${distPathFulfilled} has been updated`)
     }
   }
   await saveUnitMeta({ unitMeta, unitMetaPath })
-  log.black(`File ${unitMetaPath} has been updated`)
+  // log.black(`File ${unitMetaPath} has been updated`)
 }

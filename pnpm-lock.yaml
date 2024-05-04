@@ -15,8 +15,8 @@ dependencies:
     specifier: ^3.3.2
     version: 3.3.2
   i777n-core:
-    specifier: ^0.1.17
-    version: 0.1.17
+    specifier: ^0.1.18
+    version: 0.1.18
   js-yaml:
     specifier: ^4.1.0
     version: 4.1.0
@@ -1061,8 +1061,8 @@ packages:
     hasBin: true
     dev: true
 
-  /i777n-core@0.1.17:
-    resolution: {integrity: sha512-sdOcvGbHZVamaDBQV3pRY8kCFTCbL4KzI3kUfvp9eMgWvYQsuMN46jm8uN82/L+H+8p1C9lb3TLl6ar1fobVTw==}
+  /i777n-core@0.1.18:
+    resolution: {integrity: sha512-3mPoFugh8KA9EJgZzHN67OJMLUPzkVsUbtzFKAWO4Jf4g2T2emYUn9h+6rthGFkn+3kiunRgCrgCX6SZdq184A==}
     dependencies:
       dedent: 1.5.3
       lodash: 4.17.21

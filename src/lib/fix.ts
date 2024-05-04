@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs'
 import { fix } from 'i777n-core'
 import path from 'path'
-import { getDataFromFile, getPathsByGlobs, log, stringsToLikeArrayString } from 'svag-cli-utils'
+import { getDataFromFile, getPathsByGlobs, stringsToLikeArrayString } from 'svag-cli-utils'
 import { ConfigCore, getConfigUnit } from './config'
 import { getUnitMeta, parseUnitFile, saveUnitMeta } from './unit'
 import { fulfillDistPath, normalizeGlobs } from './utils'
@@ -38,7 +38,13 @@ const fixOne = async ({ unitPath, configCore }: { unitPath: string; configCore: 
       distPath: configUnit.distPath,
       distLang,
     })
-    const distContent = await getDataFromFile({ filePath: distPathFulfilled })
+    const distContent = await (async () => {
+      try {
+        return await getDataFromFile({ filePath: distPathFulfilled })
+      } catch (error) {
+        return {}
+      }
+    })()
     await fs.mkdir(path.dirname(distPathFulfilled), { recursive: true })
     const { meta: updatedUnitMeta } = await fix({
       srcContent: unitContent,
@@ -50,5 +56,5 @@ const fixOne = async ({ unitPath, configCore }: { unitPath: string; configCore: 
     Object.assign(unitMeta, updatedUnitMeta)
   }
   await saveUnitMeta({ unitMeta, unitMetaPath })
-  log.black(`File ${unitMetaPath} has been updated`)
+  // log.black(`File ${unitMetaPath} has been updated`)
 }
