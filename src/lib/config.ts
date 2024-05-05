@@ -8,7 +8,7 @@ const zConfigGeneral = z.object({
   srcLang: zI777LangCode,
   distLangs: z.array(zI777LangCode),
   distPath: z.string(),
-  combinedDistPath: z.string(),
+  combinedDistPath: z.string().optional().nullable(),
 })
 export const zConfigCore = zConfigGeneral.extend({
   baseDir: z.string(),
@@ -26,10 +26,10 @@ export type ConfigUnitSource = z.infer<typeof zConfigUnitSource>
 
 const defaultConfigCore: ConfigCore = {
   baseDir: '.',
-  globs: ['**/locale.(ts|js|yml|yaml|json)', '!**/node_modules/**', '!**/dist/**'],
+  globs: ['**/locale/index.(ts|js|yml|yaml|json)', '!**/node_modules/**', '!**/dist/**'],
   srcLang: 'en',
   distLangs: ['en'],
-  distPath: './locale/$lang.json',
+  distPath: './$lang.json',
   combinedDistPath: './src/locale.json',
 }
 
@@ -76,7 +76,8 @@ export const getConfigCore = async ({ dirPath }: { dirPath: string }) => {
     throw new Error(`Invalid core config file: "${configCorePath}": ${configCoreMergedValidated.error.message}`)
   }
   const configCore = configCoreMergedValidated.data
-  configCore.combinedDistPath = path.resolve(path.dirname(configCorePath), configCore.combinedDistPath)
+  configCore.combinedDistPath =
+    configCore.combinedDistPath && path.resolve(path.dirname(configCorePath), configCore.combinedDistPath)
   return { configCore }
 }
 

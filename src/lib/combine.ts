@@ -6,6 +6,9 @@ import path from 'path'
 import { getDataFromFile, getPathsByGlobs, log } from 'svag-cli-utils'
 
 export const combine = async ({ configCore }: { configCore: ConfigCore }) => {
+  if (!configCore.combinedDistPath) {
+    return
+  }
   const { filePaths } = await getPathsByGlobs({
     globs: configCore.globs,
     baseDir: configCore.baseDir,

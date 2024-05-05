@@ -44,11 +44,24 @@ defineCliApp(async ({ cwd, command, args, argr, flags }) => {
       })
       break
     }
+    case 'apply-combine':
+    case 'ac': {
+      await applyToAll({
+        globs: args,
+        configCore,
+      })
+      await combine({
+        configCore,
+      })
+      break
+    }
     case 'h': {
       log.black(dedent`Commands:
         apply ...glob[] — translate files by globs
         check ...glob[] — check files by globs
         fix ...glob[] — fix files by globs
+        combine — combine all in one .json file
+        ac | apply-combine ...glob[] — apply and combine
         h — help
         `)
       break
