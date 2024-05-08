@@ -37,7 +37,7 @@ const findAllConfigsCorePaths = async ({ dirPath }: { dirPath: string }) => {
   const configCorePaths: string[] = []
   let dirPathHere = path.resolve('/', dirPath)
   for (let i = 0; i < 777; i++) {
-    const maybeConfigGlob = `${dirPathHere}/i777n.config.(js|ts|yml|yaml|json)`
+    const maybeConfigGlob = `${dirPathHere}/i777n.config.(mjs|js|mjs|ts|yml|yaml|json)`
     const maybeConfigPath = (
       await fg([maybeConfigGlob], {
         onlyFiles: true,
