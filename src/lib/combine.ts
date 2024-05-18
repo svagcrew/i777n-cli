@@ -1,4 +1,5 @@
-import { ConfigCore, getConfigUnit } from '@/lib/config'
+import type { ConfigCore } from '@/lib/config'
+import { getConfigUnit } from '@/lib/config'
 import { parseUnitFile } from '@/lib/unit'
 import { fulfillDistPath } from '@/lib/utils'
 import fs from 'fs/promises'

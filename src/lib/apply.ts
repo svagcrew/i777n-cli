@@ -1,10 +1,11 @@
+import type { ConfigCore } from './config'
+import { getConfigUnit } from './config'
+import { getUnitMeta, parseUnitFile, saveUnitMeta } from './unit'
+import { fulfillDistPath, normalizeGlobs } from './utils'
 import { promises as fs } from 'fs'
 import { translate } from 'i777n-core'
 import path from 'path'
 import { getPathsByGlobs, log, stringsToLikeArrayString } from 'svag-cli-utils'
-import { ConfigCore, getConfigUnit } from './config'
-import { getUnitMeta, parseUnitFile, saveUnitMeta } from './unit'
-import { fulfillDistPath, normalizeGlobs } from './utils'
 
 export const applyToAll = async ({ globs, configCore }: { globs?: ConfigCore['globs']; configCore: ConfigCore }) => {
   const { normalizedGlobs } = normalizeGlobs({ globs, configCore })

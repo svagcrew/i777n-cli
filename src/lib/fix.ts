@@ -1,10 +1,11 @@
+import type { ConfigCore } from './config'
+import { getConfigUnit } from './config'
+import { getUnitMeta, parseUnitFile, saveUnitMeta } from './unit'
+import { fulfillDistPath, normalizeGlobs } from './utils'
 import { promises as fs } from 'fs'
 import { fix } from 'i777n-core'
 import path from 'path'
 import { getDataFromFile, getPathsByGlobs, stringsToLikeArrayString } from 'svag-cli-utils'
-import { ConfigCore, getConfigUnit } from './config'
-import { getUnitMeta, parseUnitFile, saveUnitMeta } from './unit'
-import { fulfillDistPath, normalizeGlobs } from './utils'
 
 export const fixAll = async ({ globs, configCore }: { globs?: ConfigCore['globs']; configCore: ConfigCore }) => {
   const { normalizedGlobs } = normalizeGlobs({ globs, configCore })
@@ -41,7 +42,7 @@ const fixOne = async ({ unitPath, configCore }: { unitPath: string; configCore: 
     const distContent = await (async () => {
       try {
         return await getDataFromFile({ filePath: distPathFulfilled })
-      } catch (error) {
+      } catch {
         return {}
       }
     })()

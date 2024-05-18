@@ -1,7 +1,8 @@
-import { ConfigUnit } from '@/lib/config'
+import type { ConfigUnit } from '@/lib/config'
 import { fulfillDistPath } from '@/lib/utils'
 import fs from 'fs/promises'
-import { getClearI777Meta, I777Meta, normalizeI777Meta } from 'i777n-core'
+import type { I777Meta } from 'i777n-core'
+import { getClearI777Meta, normalizeI777Meta } from 'i777n-core'
 import _ from 'lodash'
 import { getDataFromFile, isFileExists } from 'svag-cli-utils'
 

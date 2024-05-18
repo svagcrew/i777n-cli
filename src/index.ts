@@ -1,5 +1,4 @@
 import 'source-map-support/register'
-
 import { applyToAll } from '@/lib/apply'
 import { checkAll } from '@/lib/check'
 import { combine } from '@/lib/combine'

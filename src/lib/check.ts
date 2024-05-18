@@ -1,8 +1,9 @@
-import { check } from 'i777n-core'
-import { getPathsByGlobs, log, stringsToLikeArrayString } from 'svag-cli-utils'
-import { ConfigCore, getConfigUnit } from './config'
+import type { ConfigCore } from './config'
+import { getConfigUnit } from './config'
 import { getUnitMeta, parseUnitFile } from './unit'
 import { normalizeGlobs } from './utils'
+import { check } from 'i777n-core'
+import { getPathsByGlobs, log, stringsToLikeArrayString } from 'svag-cli-utils'
 
 export const checkAll = async ({ globs, configCore }: { globs?: ConfigCore['globs']; configCore: ConfigCore }) => {
   const { normalizedGlobs } = normalizeGlobs({ globs, configCore })
