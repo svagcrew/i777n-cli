@@ -15,8 +15,8 @@ dependencies:
     specifier: ^3.3.2
     version: 3.3.2
   i777n-core:
-    specifier: ^0.1.27
-    version: 0.1.27
+    specifier: ^0.1.28
+    version: 0.1.28
   js-yaml:
     specifier: ^4.1.0
     version: 4.1.0
@@ -30,8 +30,8 @@ dependencies:
     specifier: ^0.1.57
     version: 0.1.57(@types/node@20.12.7)
   svag-deep-map:
-    specifier: ^0.1.10
-    version: 0.1.10
+    specifier: ^0.1.11
+    version: 0.1.11
   yargs:
     specifier: ^17.7.2
     version: 17.7.2
@@ -3402,13 +3402,13 @@ packages:
     hasBin: true
     dev: true
 
-  /i777n-core@0.1.27:
-    resolution: {integrity: sha512-+r9F86jyA9mNVdl5OYCBAbtaLMTJtV6WsqrCivlmbo0o2AD12gMWJnM+zjjvuIF14XYuJu18hKkVp/T7OYpvWQ==}
+  /i777n-core@0.1.28:
+    resolution: {integrity: sha512-70Ppg1/r06ud86ZqOcgw10ngwpVtTkZdTuhSH0eGKhnkGoy+NsMs9kWKvjE8xTI5q0i+KlApuB2ZlS7UWXrZEw==}
     dependencies:
       dedent: 1.5.3
       lodash: 4.17.21
       openai: 4.39.0
-      svag-deep-map: 0.1.10
+      svag-deep-map: 0.1.11
       tiktoken: 1.0.14
       zod: 3.22.4
     transitivePeerDependencies:
@@ -4842,8 +4842,8 @@ packages:
       - '@types/node'
       - babel-plugin-macros
 
-  /svag-deep-map@0.1.10:
-    resolution: {integrity: sha512-pBF8U0YRm8SXKivl42z6MqDG7qNE70XpjpojZKD9JkPxi3j+3R99rW4X834mOLxyUWcj6ex3nP8CgEhHdUCH9A==}
+  /svag-deep-map@0.1.11:
+    resolution: {integrity: sha512-oUvsLWmMAjBFtj56WHMaXL1lHgLNEQAVCTEdSpZrpSY5cOmU8COLGk2rsY1gJc4rhe/SYV6tEr4tLxCcKJuEmw==}
     dependencies:
       lodash: 4.17.21
     dev: false
