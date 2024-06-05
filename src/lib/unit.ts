@@ -1,5 +1,5 @@
-import type { ConfigUnit } from '@/lib/config'
-import { fulfillDistPath } from '@/lib/utils'
+import type { ConfigUnit } from '@/lib/config.js'
+import { fulfillDistPath } from '@/lib/utils.js'
 import fs from 'fs/promises'
 import type { I777Meta } from 'i777n-core'
 import { getClearI777Meta, normalizeI777Meta } from 'i777n-core'

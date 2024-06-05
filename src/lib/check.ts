@@ -1,7 +1,7 @@
-import type { ConfigCore } from './config'
-import { getConfigUnit } from './config'
-import { getUnitMeta, parseUnitFile } from './unit'
-import { normalizeGlobs } from './utils'
+import type { ConfigCore } from '@/lib/config.js'
+import { getConfigUnit } from '@/lib/config.js'
+import { getUnitMeta, parseUnitFile } from '@/lib/unit.js'
+import { normalizeGlobs } from '@/lib/utils.js'
 import { check } from 'i777n-core'
 import { getPathsByGlobs, log, stringsToLikeArrayString } from 'svag-cli-utils'
 
