@@ -1,4 +1,4 @@
-import 'source-map-support/register'
+import 'source-map-support/register.js'
 import { applyToAll } from '@/lib/apply.js'
 import { checkAll } from '@/lib/check.js'
 import { combine } from '@/lib/combine.js'

@@ -26,7 +26,7 @@ export type ConfigUnitSource = z.infer<typeof zConfigUnitSource>
 
 const defaultConfigCore: ConfigCore = {
   baseDir: '.',
-  globs: ['**/locale/index.(ts|js|yml|yaml|json)', '!**/node_modules/**', '!**/dist/**'],
+  globs: ['**/locale/index.(ts|js|mjs|yml|yaml|json)', '!**/node_modules/**', '!**/dist/**'],
   srcLang: 'en',
   distLangs: ['en'],
   distPath: './$lang.json',
