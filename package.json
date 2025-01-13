@@ -35,7 +35,7 @@
     "dedent": "^1.5.3",
     "dotenv": "^16.4.5",
     "fast-glob": "^3.3.2",
-    "i777n-core": "^0.1.31",
+    "i777n-core": "^0.1.33",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
     "source-map-support": "^0.5.21",
