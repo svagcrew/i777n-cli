@@ -1,6 +1,6 @@
 {
   "name": "i777n-cli",
-  "version": "0.1.34",
+  "version": "0.1.35",
   "homepage": "https://github.com/svagcrew/i777n-cli",
   "repository": {
     "type": "git",
@@ -35,7 +35,7 @@
     "dedent": "^1.5.3",
     "dotenv": "^16.4.5",
     "fast-glob": "^3.3.2",
-    "i777n-core": "^0.1.33",
+    "i777n-core": "^0.1.34",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
     "source-map-support": "^0.5.21",

@@ -18,9 +18,25 @@ export const applyToAll = async ({ globs, configCore }: { globs?: ConfigCore['gl
       `No files found by globs ${stringsToLikeArrayString(normalizedGlobs)} inside "${configCore.baseDir}"`
     )
   }
-  for (const unitPath of filePaths) {
-    await applyToOne({ unitPath, configCore })
+  // for (const unitPath of filePaths) {
+  //   await applyToOne({ unitPath, configCore })
+  // }
+  const results = await Promise.all(
+    filePaths.map(async (unitPath) => {
+      try {
+        await applyToOne({ unitPath, configCore })
+        return { error: null }
+      } catch (error) {
+        return { error: `Error applying to file ${unitPath}: ${error}` }
+      }
+    })
+  )
+  for (const result of results) {
+    if (result.error) {
+      log.red(result.error)
+    }
   }
+  return results
 }
 
 const applyToOne = async ({ unitPath, configCore }: { unitPath: string; configCore: ConfigCore }) => {
