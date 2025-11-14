@@ -18,25 +18,9 @@ export const applyToAll = async ({ globs, configCore }: { globs?: ConfigCore['gl
       `No files found by globs ${stringsToLikeArrayString(normalizedGlobs)} inside "${configCore.baseDir}"`
     )
   }
-  // for (const unitPath of filePaths) {
-  //   await applyToOne({ unitPath, configCore })
-  // }
-  const results = await Promise.all(
-    filePaths.map(async (unitPath) => {
-      try {
-        await applyToOne({ unitPath, configCore })
-        return { error: null }
-      } catch (error) {
-        return { error: `Error applying to file ${unitPath}: ${error}` }
-      }
-    })
-  )
-  for (const result of results) {
-    if (result.error) {
-      log.red(result.error)
-    }
+  for (const unitPath of filePaths) {
+    await applyToOne({ unitPath, configCore })
   }
-  return results
 }
 
 const applyToOne = async ({ unitPath, configCore }: { unitPath: string; configCore: ConfigCore }) => {
@@ -50,36 +34,44 @@ const applyToOne = async ({ unitPath, configCore }: { unitPath: string; configCo
     configUnit,
     unitContent,
   })
-  for (const distLang of configUnit.distLangs) {
-    const distPathFulfilled = fulfillDistPath({
-      distPath: configUnit.distPath,
-      distLang,
-    })
-    await fs.mkdir(path.dirname(distPathFulfilled), { recursive: true })
-    if (distLang === configUnit.srcLang) {
-      await fs.writeFile(distPathFulfilled, JSON.stringify(unitContent, null, 2) + '\n', 'utf8')
-      // log.black(`File ${distPathFulfilled} has been updated`)
-    } else {
-      const {
-        content: distContent,
-        meta: updatedUnitMeta,
-        wasTranslated,
-      } = await translate({
-        content: unitContent,
-        meta: unitMeta,
-        srcLang: configUnit.srcLang,
-        distLang,
-      })
-      if (wasTranslated) {
-        log.green(`File ${unitPath} has been translated from ${configUnit.srcLang} to ${distLang}`)
-      } else {
-        // log.black(`File ${unitPath} has not been translated from ${configUnit.srcLang} to ${distLang}`)
+  await Promise.all(
+    configUnit.distLangs.map(async (distLang) => {
+      try {
+        // for (const distLang of configUnit.distLangs) {
+        const distPathFulfilled = fulfillDistPath({
+          distPath: configUnit.distPath,
+          distLang,
+        })
+        await fs.mkdir(path.dirname(distPathFulfilled), { recursive: true })
+        if (distLang === configUnit.srcLang) {
+          await fs.writeFile(distPathFulfilled, JSON.stringify(unitContent, null, 2) + '\n', 'utf8')
+          // log.black(`File ${distPathFulfilled} has been updated`)
+        } else {
+          const {
+            content: distContent,
+            meta: updatedUnitMeta,
+            wasTranslated,
+          } = await translate({
+            content: unitContent,
+            meta: unitMeta,
+            srcLang: configUnit.srcLang,
+            distLang,
+          })
+          if (wasTranslated) {
+            log.green(`File ${unitPath} has been translated from ${configUnit.srcLang} to ${distLang}`)
+          } else {
+            // log.black(`File ${unitPath} has not been translated from ${configUnit.srcLang} to ${distLang}`)
+          }
+          Object.assign(unitMeta, updatedUnitMeta)
+          await fs.writeFile(distPathFulfilled, JSON.stringify(distContent, null, 2) + '\n', 'utf8')
+          // log.black(`File ${distPathFulfilled} has been updated`)
+        }
+      } catch (error) {
+        log.red(`Error applying to file ${unitPath} to ${distLang}: ${error}`)
       }
-      Object.assign(unitMeta, updatedUnitMeta)
-      await fs.writeFile(distPathFulfilled, JSON.stringify(distContent, null, 2) + '\n', 'utf8')
-      // log.black(`File ${distPathFulfilled} has been updated`)
-    }
-  }
+      // }
+    })
+  )
   await saveUnitMeta({ unitMeta, unitMetaPath })
   // log.black(`File ${unitMetaPath} has been updated`)
 }
